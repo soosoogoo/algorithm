@@ -273,7 +273,12 @@ public class Solution {
     }
 
 
-    public int maxProfit3V2(int[] x) {
+    /**
+     * 大神 答案 , 待研究清楚
+     * @param x 股票价格
+     * @return int
+     */
+    private int maxProfit3V2(int[] x) {
 
         int fstBuy = Integer.MAX_VALUE, secBuy = Integer.MAX_VALUE;
         int fstSell = 0, secSell = 0;
