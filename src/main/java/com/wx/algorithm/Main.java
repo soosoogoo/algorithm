@@ -47,7 +47,7 @@ public class Main {
         Solution bts = new Solution();
 
         //考虑的方向有问题
-        int[] stocksDate = {1,2,4,2,5,7,2,4,9,0};
+        int[] stocksDate = {1,2,3,4,5,6,5,9,10};
         int maxProfit = bts.maxProfit(stocksDate);
         System.out.println(maxProfit);
     }

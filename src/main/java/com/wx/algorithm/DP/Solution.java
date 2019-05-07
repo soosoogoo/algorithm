@@ -280,19 +280,18 @@ public class Solution {
      */
     private int maxProfit3V2(int[] x) {
 
-        int fstBuy = Integer.MAX_VALUE, secBuy = Integer.MAX_VALUE;
+        int fstBuy = Integer.MIN_VALUE, secBuy = Integer.MIN_VALUE;
         int fstSell = 0, secSell = 0;
 
         System.out.println(Arrays.toString(x));
         for (int x1 : x) {
-            fstBuy = Math.min(fstBuy, x1);
-            fstSell = Math.max(fstSell,  x1 - fstBuy);
+            fstBuy = Math.max(fstBuy, -x1);
+            fstSell = Math.max(fstSell,  fstBuy + x1);
 
-            secBuy = Math.min(secBuy, x1 - fstSell);
-            secSell = Math.max(secSell, x1 - secBuy);
+            secBuy = Math.max(secBuy, fstSell - x1);
+            secSell = Math.max(secSell, x1 + secBuy);
             System.out.printf("当前值 %s fstBuy-> %s fstSell -> %s secBuy -> %s secSell -> %s \n", x1, fstBuy, fstSell, secBuy, secSell);
         }
-
 
         return secSell;
     }
